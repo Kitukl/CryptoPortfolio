@@ -1,0 +1,14 @@
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/bin/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.deps.json
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/bin/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.runtimeconfig.json
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/bin/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/bin/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.pdb
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.csproj.AssemblyReference.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.AssemblyInfoInputs.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.AssemblyInfo.cs
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.csproj.CoreCompileInputs.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/refint/CryptoAnalyzer.Portfolio.DAL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.pdb
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/CryptoAnalyzer.Portfolio.DAL.genruntimeconfig.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/Debug/net9.0/ref/CryptoAnalyzer.Portfolio.DAL.dll

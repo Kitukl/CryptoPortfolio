@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_portfolio_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 435762198Oklik
+      POSTGRES_DB: crypto_portfolio_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - crypto_network
+
+volumes:
+  postgres_data:
+
+networks:
+  crypto_network:
+    driver: bridge
