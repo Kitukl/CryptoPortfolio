@@ -1,0 +1,12 @@
+.env
+
+# IDE Files (Rider/IntelliJ)
+.idea/
+*.iws
+*.iml
+*.ipr
+*.sln.DotSettings.user
+
+# Binaries and object files
+[Bb]in/
+[Oo]bj/
