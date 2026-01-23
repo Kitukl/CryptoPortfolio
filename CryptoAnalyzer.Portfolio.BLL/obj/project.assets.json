@@ -986,11 +986,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\CryptoAnalyzer.Portfolio.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\CryptoAnalyzer.Portfolio.BLL.csproj",
       "projectName": "CryptoAnalyzer.Portfolio.BLL",
-      "projectPath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\CryptoAnalyzer.Portfolio.BLL.csproj",
+      "projectPath": "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\CryptoAnalyzer.Portfolio.BLL.csproj",
       "packagesPath": "C:\\Users\\kitol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\obj\\",
+      "outputPath": "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kitol\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1005,8 +1005,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj": {
-              "projectPath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj"
+            "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj": {
+              "projectPath": "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj"
             }
           }
         }

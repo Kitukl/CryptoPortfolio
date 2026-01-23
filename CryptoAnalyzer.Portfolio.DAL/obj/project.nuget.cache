@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wAEmkejPj7s=",
+  "dgSpecHash": "DUW3jdoFB28=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj",
+  "projectFilePath": "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kitol\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\kitol\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoAnalyzer.Portfolio.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8f41e938e24137481d79b17036202a9860c71da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ce57ca343804d36aaec5badb2bdf670b04cb62f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoAnalyzer.Portfolio.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoAnalyzer.Portfolio.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

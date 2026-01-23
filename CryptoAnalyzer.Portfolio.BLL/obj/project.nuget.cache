@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A104j3o6asw=",
+  "dgSpecHash": "9Nny7IHWzM4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\CryptoAnalyzer.Portfolio.BLL.csproj",
+  "projectFilePath": "C:\\Users\\kitol\\RiderProjects\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.BLL\\CryptoAnalyzer.Portfolio.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kitol\\.nuget\\packages\\mediatr\\14.0.0\\mediatr.14.0.0.nupkg.sha512",
     "C:\\Users\\kitol\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
