@@ -27,7 +27,15 @@ public class Holdings : ControllerBase
         {
             return Unauthorized("User email not provided in claims");
         }
-        return Ok(await _mediatr.Send(new CreateHoldingCommand(userEmail, request.CoinName, request.AveragePrice, request.BuyingPrice)));
+
+        var result = await _mediatr.Send(new CreateHoldingCommand(userEmail, request.CoinName, request.AveragePrice, request.BuyingPrice));
+
+        if (!result.isSuccess)
+        {
+            return NotFound(result.Errors);
+        }
+        
+        return Ok(result.Value);
     }
     
     [HttpPut]
@@ -44,7 +52,15 @@ public class Holdings : ControllerBase
         {
             return Unauthorized("User email not provided in claims");
         }
-        return Ok(await _mediatr.Send(new GetUserHoldingsQuery(userEmail)));
+
+        var result = await _mediatr.Send(new GetUserHoldingsQuery(userEmail));
+
+        if (!result.isSuccess)
+        {
+            return NotFound(result.Errors);
+        }
+        
+        return Ok(result.Value);
     }
 
     [HttpDelete("{id}")]

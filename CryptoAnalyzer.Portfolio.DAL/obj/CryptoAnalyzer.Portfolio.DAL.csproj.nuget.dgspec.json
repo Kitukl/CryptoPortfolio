@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/CryptoAnalyzer.Portfolio.DAL.csproj": {}
+    "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj": {}
   },
   "projects": {
-    "/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/CryptoAnalyzer.Portfolio.DAL.csproj": {
+    "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/CryptoAnalyzer.Portfolio.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj",
         "projectName": "CryptoAnalyzer.Portfolio.DAL",
-        "projectPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/CryptoAnalyzer.Portfolio.DAL.csproj",
-        "packagesPath": "/Users/kituk/.nuget/packages/",
-        "outputPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Portfolio/CryptoAnalyzer.Portfolio.DAL/obj/",
+        "projectPath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\CryptoAnalyzer.Portfolio.DAL.csproj",
+        "packagesPath": "C:\\Users\\kitol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kitol\\.NET\\CryptoPortfolio\\CryptoAnalyzer.Portfolio.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kituk/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kitol\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -80,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

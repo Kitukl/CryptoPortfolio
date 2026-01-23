@@ -19,8 +19,12 @@ public class Coins : ControllerBase
     [HttpPost]
     public async Task<ActionResult> UploadCoins()
     {
-        await _mediatr.Send(new UploadCoinsCommand());
-        return Created();
+        var result = await _mediatr.Send(new UploadCoinsCommand());
+        if (!result.isSuccess)
+        {
+            return BadRequest(result.Errors);
+        }
+        return Ok(result.Value);
     }
     
     [HttpGet]

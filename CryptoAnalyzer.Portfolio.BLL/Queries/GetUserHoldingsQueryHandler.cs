@@ -1,14 +1,15 @@
 using System.Net.Http.Json;
 using System.Text.Json.Nodes;
 using CryptoAnalyzer.Portfolio.BLL.DTOs;
+using CryptoAnalyzer.Portfolio.BLL.Exceptions;
 using CryptoAnalyzer.Portfolio.DAL.Repositories;
 using MediatR;
 
 namespace CryptoAnalyzer.Portfolio.BLL.Queries;
 
-public record GetUserHoldingsQuery(string userEmail) : IRequest<IEnumerable<HoldingResponse>>;
+public record GetUserHoldingsQuery(string userEmail) : IRequest<Result<IEnumerable<HoldingResponse>>>;
 
-public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery, IEnumerable<HoldingResponse>>
+public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery, Result<IEnumerable<HoldingResponse>>>
 {
     private readonly IHoldingRepository _repository;
     private readonly HttpClient _httpClient;
@@ -20,10 +21,10 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
         _httpClient.DefaultRequestHeaders.Add("User-Agent", "CryptoAnalyzer");
     }
 
-    public async Task<IEnumerable<HoldingResponse>> Handle(GetUserHoldingsQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<HoldingResponse>>> Handle(GetUserHoldingsQuery request, CancellationToken cancellationToken)
     {
         var holdings = (await _repository.GetListAsync(request.userEmail)).ToList();
-        if (!holdings.Any()) return Enumerable.Empty<HoldingResponse>();
+        if (!holdings.Any()) return Result<IEnumerable<HoldingResponse>>.Failure("Not found any holdings");
 
         var coinIds = string.Join(",", holdings.Select(h => h.Coin.Id).Distinct());
         var pricesNode = await _httpClient.GetFromJsonAsync<JsonNode>($"https://api.coingecko.com/api/v3/simple/price?ids={coinIds}&vs_currencies=usd", cancellationToken);
@@ -58,7 +59,9 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
                     CreatedAt = holding.CreatedAt
                 });
             }
+
+            return Result<IEnumerable<HoldingResponse>>.Failure("External error (API)");
         }
-        return result;
+        return Result<IEnumerable<HoldingResponse>>.Success(result);
     }
 }

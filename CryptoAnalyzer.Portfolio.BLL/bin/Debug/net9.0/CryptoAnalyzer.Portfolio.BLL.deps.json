@@ -9,8 +9,7 @@
       "CryptoAnalyzer.Portfolio.BLL/1.0.0": {
         "dependencies": {
           "CryptoAnalyzer.Portfolio.DAL": "1.0.0",
-          "MediatR": "14.0.0",
-          "Microsoft.Extensions.Http": "9.0.0.0"
+          "MediatR": "14.0.0"
         },
         "runtime": {
           "CryptoAnalyzer.Portfolio.BLL.dll": {}
@@ -262,54 +261,6 @@
             "fileVersion": "1.0.0.0"
           }
         }
-      },
-      "Microsoft.Extensions.Http/9.0.0.0": {
-        "runtime": {
-          "Microsoft.Extensions.Http.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.825.36511"
-          }
-        }
-      },
-      "Microsoft.Extensions.Diagnostics/9.0.0.0": {
-        "runtime": {
-          "Microsoft.Extensions.Diagnostics.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.825.36511"
-          }
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.0.0": {
-        "runtime": {
-          "Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.825.36511"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration/9.0.0.0": {
-        "runtime": {
-          "Microsoft.Extensions.Configuration.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.825.36511"
-          }
-        }
-      },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.0.0": {
-        "runtime": {
-          "Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.825.36511"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration.Binder/9.0.0.0": {
-        "runtime": {
-          "Microsoft.Extensions.Configuration.Binder.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.825.36511"
-          }
-        }
       }
     }
   },
@@ -475,36 +426,6 @@
     },
     "CryptoAnalyzer.Portfolio.DAL/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Http/9.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Diagnostics/9.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Diagnostics.Abstractions/9.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Configuration/9.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Configuration.Binder/9.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

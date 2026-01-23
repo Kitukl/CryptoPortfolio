@@ -1,7 +1,9 @@
+using CryptoAnalyzer.Portfolio.BLL.Exceptions;
 using CryptoAnalyzer.Portfolio.BLL.Queries;
 using CryptoAnalyzer.Portfolio.DAL;
 using CryptoAnalyzer.Portfolio.DAL.Repositories;
 using dotenv.net;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 DotEnv.Load();
@@ -23,6 +25,8 @@ builder.Services.AddDbContext<PortfolioContext>(options =>
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ICoinRepository, CoinRepository>();  
 builder.Services.AddScoped<IHoldingRepository, HoldingRepository>();
+
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandler<,>));
 
 builder.Services.AddCors(options =>
 {
