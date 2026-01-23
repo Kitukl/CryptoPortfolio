@@ -28,15 +28,15 @@ public class HoldingRepository : IHoldingRepository
            .ToListAsync();
     }
 
-    public async Task<string> CreateAsync(string userEmail, Coin coin, double averagePrice, double buyingPrice)
+    public async Task<string> CreateAsync(string userEmail, Coin coin, double pricePerUnit, double quantity)
     {
         var holding = new Holding
         {
             Id = new Guid(),
             Coin = coin,
             UserEmail = userEmail,
-            AveragePrice = averagePrice,
-            BuyingPrice = buyingPrice,
+            PricePerUnit = pricePerUnit,
+            Quantity = quantity,
             CreatedAt = DateTime.UtcNow
         };
         await _context.Holdings.AddAsync(holding);
@@ -45,15 +45,17 @@ public class HoldingRepository : IHoldingRepository
         return holding.Id.ToString();
     }
 
-    public async Task<string> UpdateAsync(Guid id, Coin coin, double averagePrice, double buyingPrice)
+    public async Task<string> UpdateAsync(Guid id, Coin coin, double pricePerUnit, double quantity)
     {
-        await _context.Holdings
-            .Where(h => h.Id == id)
-            .ExecuteUpdateAsync(s => s
-            .SetProperty(h => h.AveragePrice, averagePrice)
-            .SetProperty(h => h.BuyingPrice, buyingPrice)
-            .SetProperty(h => h.Coin, coin));
-        await _context.SaveChangesAsync();
+        var holding = await _context.Holdings.FirstOrDefaultAsync(h => h.Id == id);
+    
+        if (holding != null)
+        {
+            holding.PricePerUnit = pricePerUnit;
+            holding.Quantity = quantity;
+            holding.Coin = coin;
+            await _context.SaveChangesAsync();
+        }
 
         return id.ToString();
     }

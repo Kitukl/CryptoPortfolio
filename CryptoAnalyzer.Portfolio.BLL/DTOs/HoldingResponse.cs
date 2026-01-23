@@ -7,7 +7,8 @@ public class HoldingResponse
     public Guid Id { get; set; }
     public string UserEmail { get; set; }
     public Coin Coin { get; set; }
-    public double AveragePrice { get; set; }
+    public double PricePerUnit { get; set; }
+    public double Quantity { get; set; }
     public double? CurrentPrice { get; set; }
     public double? CurrentProfit { get; set; }
     public double? PredictedPrice { get; set; }

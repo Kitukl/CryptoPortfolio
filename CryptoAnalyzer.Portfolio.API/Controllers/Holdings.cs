@@ -38,10 +38,10 @@ public class Holdings : ControllerBase
         return Ok(result.Value);
     }
     
-    [HttpPut]
-    public async Task<ActionResult<string>> UpdateHolding(UpdateHoldingCommand command)
+    [HttpPut("{id}")]
+    public async Task<ActionResult<string>> UpdateHolding([FromRoute] Guid id, [FromBody] UpdateHoldingRequest request)
     {
-        return Ok(await _mediatr.Send(command));
+        return Ok(await _mediatr.Send(new UpdateHoldingCommand(id, request.CoinName, request.PricePerUnit, request.Quantity)));
     }
 
     [HttpGet]

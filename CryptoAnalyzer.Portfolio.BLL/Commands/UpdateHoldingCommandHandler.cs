@@ -5,7 +5,7 @@ using MediatR;
 
 namespace CryptoAnalyzer.Portfolio.BLL.Commands;
 
-public record UpdateHoldingCommand(Guid id, string coinName, double averagePrice, double buyingPrice) : IRequest<Result<string>>;
+public record UpdateHoldingCommand(Guid id, string coinName, double pricePerUnit, double quantity) : IRequest<Result<string>>;
 
 public class UpdateHoldingCommandHandler : IRequestHandler<UpdateHoldingCommand, Result<string>>
 {
@@ -21,6 +21,6 @@ public class UpdateHoldingCommandHandler : IRequestHandler<UpdateHoldingCommand,
     {
         var coin = await _coinRepository.GetByNameAsync(request.coinName);
         if (coin == null) return Result<string>.Failure("Coin with this name not found");
-        return Result<string>.Success(await _holdingRepository.UpdateAsync(request.id, coin, request.averagePrice, request.buyingPrice));
+        return Result<string>.Success(await _holdingRepository.UpdateAsync(request.id, coin, request.pricePerUnit, request.quantity));
     }
 }

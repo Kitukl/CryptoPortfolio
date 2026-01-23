@@ -31,6 +31,8 @@ public class CoinRepository : ICoinRepository
     }
     public async Task UploadCoinsAsync(IEnumerable<Coin> coins)
     {
+        var existingCoins = await _context.Coins.ToListAsync();
+        _context.Coins.RemoveRange(existingCoins);
         await _context.Coins.AddRangeAsync(coins);
         await _context.SaveChangesAsync();
     }

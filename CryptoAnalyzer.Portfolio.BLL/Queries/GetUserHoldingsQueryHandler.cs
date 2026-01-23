@@ -38,9 +38,9 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
             if (currentPrice.HasValue)
             {
                 double profitPercent = 0;
-                if (holding.AveragePrice > 0)
+                if (holding.PricePerUnit > 0)
                 {
-                    profitPercent = (currentPrice.Value - holding.AveragePrice) / holding.AveragePrice * 100;
+                    profitPercent = (currentPrice.Value - holding.PricePerUnit) / holding.PricePerUnit * 100;
                 }
 
                 if (!double.IsFinite(profitPercent))
@@ -53,14 +53,13 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
                     Id = holding.Id,
                     UserEmail = holding.UserEmail,
                     Coin = holding.Coin,
-                    AveragePrice = holding.AveragePrice,
+                    PricePerUnit = holding.PricePerUnit,
+                    Quantity = holding.Quantity,
                     CurrentPrice = currentPrice.Value,
                     CurrentProfit = Math.Round(profitPercent, 2),
                     CreatedAt = holding.CreatedAt
                 });
             }
-
-            return Result<IEnumerable<HoldingResponse>>.Failure("External error (API)");
         }
         return Result<IEnumerable<HoldingResponse>>.Success(result);
     }

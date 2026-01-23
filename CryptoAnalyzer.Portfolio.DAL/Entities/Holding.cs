@@ -8,7 +8,7 @@ public class Holding
     public string UserEmail { get; set; }
     [JsonInclude]
     public Coin Coin { get; set; }
-    public double AveragePrice { get; set; }
-    public double BuyingPrice { get; set; }
+    public double PricePerUnit { get; set; }
+    public double Quantity { get; set; }
     public DateTime CreatedAt { get; set; }
 }
