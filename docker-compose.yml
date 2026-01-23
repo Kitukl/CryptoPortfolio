@@ -13,6 +13,20 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - crypto_network
+        
+  cryptoportfolio_service:
+    build:
+      context: .
+      dockerfile: CryptoAnalyzer.Portfolio.API/Dockerfile
+    ports:
+      - "5000:8080"
+    env_file:
+      - CryptoAnalyzer.Auth/.env
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+      - crypto_network
 
 volumes:
   postgres_data:
