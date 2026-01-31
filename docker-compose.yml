@@ -21,7 +21,7 @@ services:
     ports:
       - "5000:8080"
     env_file:
-      - CryptoAnalyzer.Auth/.env
+      - CryptoAnalyzer.Portfolio.API/.env
     depends_on:
       - db
     restart: on-failure

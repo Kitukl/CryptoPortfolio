@@ -28,7 +28,7 @@ public class Holdings : ControllerBase
             return Unauthorized("User email not provided in claims");
         }
 
-        var result = await _mediatr.Send(new CreateHoldingCommand(userEmail, request.CoinName, request.AveragePrice, request.BuyingPrice));
+        var result = await _mediatr.Send(new CreateHoldingCommand(userEmail, request.CoinName, request.PricePerUnit, request.Quantity));
 
         if (!result.isSuccess)
         {

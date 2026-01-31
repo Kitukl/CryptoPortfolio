@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using CryptoAnalyzer.Portfolio.BLL.DTOs;
 using CryptoAnalyzer.Portfolio.BLL.Exceptions;
@@ -34,13 +35,18 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
         foreach (var holding in holdings)
         {
             var currentPrice = pricesNode?[holding.Coin.Id]?["usd"]?.GetValue<double>();
+            
+            var predictedRaw = await _httpClient.GetFromJsonAsync<JsonNode>($"http://localhost:5081/api/Forecast/{holding.Coin.Id}/predict/3");
+            var predictedPrice = predictedRaw["predictedPrice"].GetValue<double>();
 
             if (currentPrice.HasValue)
             {
                 double profitPercent = 0;
+                double predictedProfitPercent = 0;
                 if (holding.PricePerUnit > 0)
                 {
                     profitPercent = (currentPrice.Value - holding.PricePerUnit) / holding.PricePerUnit * 100;
+                    predictedProfitPercent = (predictedPrice - holding.PricePerUnit) / holding.PricePerUnit * 100;
                 }
 
                 if (!double.IsFinite(profitPercent))
@@ -57,7 +63,9 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
                     Quantity = holding.Quantity,
                     CurrentPrice = currentPrice.Value,
                     CurrentProfit = Math.Round(profitPercent, 2),
-                    CreatedAt = holding.CreatedAt
+                    CreatedAt = holding.CreatedAt,
+                    PredictedPrice = predictedPrice,
+                    PredictedProfit = predictedProfitPercent
                 });
             }
         }

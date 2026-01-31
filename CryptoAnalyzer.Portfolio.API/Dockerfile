@@ -9,11 +9,11 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["CryptoAnalyzer.Portfolio.API/CryptoAnalyzer.Portfolio.API.csproj", "CryptoAnalyzer.Portfolio.API/"]
 COPY ["CryptoAnalyzer.Portfolio.DAL/CryptoAnalyzer.Portfolio.DAL.csproj", "CryptoAnalyzer.Portfolio.DAL/"]
-COPY ["CryptoAnalyzer.Portfolio.BLL/CryptoAnalyzer.Portfolio.BLL", "CryptoAnalyzer.Portfolio.BLL/"]
-RUN dotnet restore "CryptoAnalyzer.Portfolio/CryptoAnalyzer.Auth.csproj"
+COPY ["CryptoAnalyzer.Portfolio.BLL/CryptoAnalyzer.Portfolio.BLL.csproj", "CryptoAnalyzer.Portfolio.BLL/"]
+RUN dotnet restore "CryptoAnalyzer.Portfolio.API/CryptoAnalyzer.Portfolio.API.csproj"
 COPY . .
-WORKDIR "/src/CryptoAnalyzer.Portfolio"
-RUN dotnet build "./CryptoAnalyzer.Portfolio.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/CryptoAnalyzer.Portfolio.API"
+RUN dotnet build "CryptoAnalyzer.Portfolio.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
