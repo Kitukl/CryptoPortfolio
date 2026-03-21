@@ -4,11 +4,13 @@ using CryptoAnalyzer.Portfolio.BLL.DTOs;
 using CryptoAnalyzer.Portfolio.BLL.Queries;
 using CryptoAnalyzer.Portfolio.DAL.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CryptoAnalyzer.Portfolio.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/[controller]")]
 public class Holdings : ControllerBase
 {

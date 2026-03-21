@@ -1,6 +1,7 @@
 using CryptoAnalyzer.Portfolio.BLL.Commands;
 using CryptoAnalyzer.Portfolio.BLL.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CryptoAnalyzer.Portfolio.Controllers;
@@ -16,6 +17,7 @@ public class Coins : ControllerBase
         _mediatr = mediatr;
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult> UploadCoins()
     {

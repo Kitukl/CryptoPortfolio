@@ -13,7 +13,7 @@ COPY ["CryptoAnalyzer.Portfolio.BLL/CryptoAnalyzer.Portfolio.BLL.csproj", "Crypt
 RUN dotnet restore "CryptoAnalyzer.Portfolio.API/CryptoAnalyzer.Portfolio.API.csproj"
 COPY . .
 WORKDIR "/src/CryptoAnalyzer.Portfolio.API"
-RUN dotnet build "CryptoAnalyzer.Portfolio.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./CryptoAnalyzer.Portfolio.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
@@ -22,7 +22,6 @@ RUN dotnet publish "./CryptoAnalyzer.Portfolio.API.csproj" -c $BUILD_CONFIGURATI
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
 RUN dotnet tool install --global dotnet-ef --version 9.0.*
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
@@ -30,4 +29,4 @@ COPY --from=build /src/CryptoAnalyzer.Portfolio.API/ /app/CryptoAnalyzer.Portfol
 COPY --from=build /src/CryptoAnalyzer.Portfolio.DAL/ /app/CryptoAnalyzer.Portfolio.DAL/
 COPY --from=build /src/CryptoAnalyzer.Portfolio.BLL/ /app/CryptoAnalyzer.Portfolio.BLL/
 
-ENTRYPOINT ["/bin/bash", "-c", "dotnet ef database update --project /app/CryptoAnalyzer.Portfolio.DAL/CryptoAuth.DAL.csproj --startup-project /app/CryptoAnalyzer.Portfolio.API/CryptoAnalyzer.Portfolio.API.csproj && dotnet CryptoAnalyzer.Portfolio.API.dll"]
+ENTRYPOINT ["/bin/bash", "-c", "dotnet ef database update --project /app/CryptoAnalyzer.Portfolio.DAL/CryptoAnalyzer.Portfolio.DAL.csproj --startup-project /app/CryptoAnalyzer.Portfolio.API/CryptoAnalyzer.Portfolio.API.csproj && dotnet CryptoAnalyzer.Portfolio.API.dll"]

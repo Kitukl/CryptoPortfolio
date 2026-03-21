@@ -2,9 +2,11 @@ using CryptoAnalyzer.Portfolio.BLL.Exceptions;
 using CryptoAnalyzer.Portfolio.BLL.Queries;
 using CryptoAnalyzer.Portfolio.DAL;
 using CryptoAnalyzer.Portfolio.DAL.Repositories;
+using CryptoAnalyzer.Portfolio.Extensions;
 using dotenv.net;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 DotEnv.Load();
 
@@ -38,6 +40,9 @@ builder.Services.AddCors(options =>
         policy.AllowCredentials();
     });
 });
+
+builder.Services.Configure<JWTOptions>(builder.Configuration.GetSection("JwtOptions"));
+builder.Services.AddJwtAuthentication(builder.Services.BuildServiceProvider().GetRequiredService<IOptions<JWTOptions>>());
 
 var app = builder.Build();
 
