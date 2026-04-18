@@ -13,7 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - crypto_network
-        
+  
   cryptoportfolio_service:
     build:
       context: .

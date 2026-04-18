@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace CryptoAnalyzer.Portfolio.Controllers;
 
 [ApiController]
-[Authorize]
 [Route("api/[controller]")]
 public class Holdings : ControllerBase
 {

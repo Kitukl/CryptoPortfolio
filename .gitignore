@@ -6,6 +6,7 @@
 *.iml
 *.ipr
 *.sln.DotSettings.user
+.env
 
 # Binaries and object files
 [Bb]in/
