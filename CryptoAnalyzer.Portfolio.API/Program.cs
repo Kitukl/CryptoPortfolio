@@ -28,6 +28,12 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<ICoinRepository, CoinRepository>();  
 builder.Services.AddScoped<IHoldingRepository, HoldingRepository>();
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "GeckoPrices";
+});
+
 builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandler<,>));
 
 builder.Services.AddCors(options =>

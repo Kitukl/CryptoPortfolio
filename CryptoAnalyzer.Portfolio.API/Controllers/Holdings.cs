@@ -45,8 +45,8 @@ public class Holdings : ControllerBase
         return Ok(await _mediatr.Send(new UpdateHoldingCommand(id, request.CoinName, request.PricePerUnit, request.Quantity)));
     }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Holding>>> GetList()
+    [HttpGet("{days}")]
+    public async Task<ActionResult<IEnumerable<Holding>>> GetList(int days)
     {
         var userEmail = User.FindFirst(ClaimTypes.Email)?.Value ?? "kitoleg167@gmail.com";
         if (userEmail == null)
@@ -54,7 +54,7 @@ public class Holdings : ControllerBase
             return Unauthorized("User email not provided in claims");
         }
 
-        var result = await _mediatr.Send(new GetUserHoldingsQuery(userEmail));
+        var result = await _mediatr.Send(new GetUserHoldingsQuery(userEmail, days));
 
         if (!result.isSuccess)
         {

@@ -9,6 +9,8 @@ public class HoldingResponse
     public Coin Coin { get; set; }
     public double PricePerUnit { get; set; }
     public double Quantity { get; set; }
+    public double CurrentProfitQuantity { get; set; }
+    public double PredictedProfitQuantity { get; set; }
     public double? CurrentPrice { get; set; }
     public double? CurrentProfit { get; set; }
     public double? PredictedPrice { get; set; }
