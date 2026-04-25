@@ -32,7 +32,7 @@ public class HoldingRepository : IHoldingRepository
     {
         var holding = new Holding
         {
-            Id = new Guid(),
+            Id = Guid.NewGuid(),
             Coin = coin,
             UserEmail = userEmail,
             PricePerUnit = pricePerUnit,

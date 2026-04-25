@@ -31,7 +31,7 @@ public class GetUserHoldingsQueryHandler : IRequestHandler<GetUserHoldingsQuery,
 
         var coinIds = string.Join(",", holdings.Select(h => h.Coin.Id).Distinct());
         
-        string priceCacheKey = $"prices_node:{request.userEmail}";
+        string priceCacheKey = $"prices_node:{request.userEmail}:{coinIds}";
         JsonNode? pricesNode;
         var cachedPrices = await _cache.GetStringAsync(priceCacheKey, cancellationToken);
 
