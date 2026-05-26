@@ -4,7 +4,6 @@ using CryptoAnalyzer.Portfolio.BLL.DTOs;
 using CryptoAnalyzer.Portfolio.BLL.Queries;
 using CryptoAnalyzer.Portfolio.DAL.Entities;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CryptoAnalyzer.Portfolio.Controllers;
@@ -23,7 +22,7 @@ public class Holdings : ControllerBase
     [HttpPost]
     public async Task<ActionResult<string>> CreateHolding([FromBody] CreateHoldingRequest request)
     {
-        var userEmail = User.FindFirst(ClaimTypes.Email)?.Value ?? "kitoleg167@gmail.com";
+        var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
         if (userEmail == null)
         {
             return Unauthorized("User email not provided in claims");
@@ -48,7 +47,7 @@ public class Holdings : ControllerBase
     [HttpGet("{days}")]
     public async Task<ActionResult<IEnumerable<Holding>>> GetList(int days)
     {
-        var userEmail = User.FindFirst(ClaimTypes.Email)?.Value ?? "kitoleg167@gmail.com";
+        var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
         if (userEmail == null)
         {
             return Unauthorized("User email not provided in claims");
